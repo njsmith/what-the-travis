@@ -1,9 +1,12 @@
 language: python
+virtualenv:
+  # For scipy
+  system_site_packages: true
 python:
   - 2.7
 before_install:
-  - sudo apt-get -qq build-dep python-scipy
-  - pip install scipy
+  - sudo apt-get install -qq python-scipy python-pandas cython
+  - pip install --use-mirrors --upgrade coverage scipy cython patsy pandas
   - pip freeze # show what's installed
 script:
   - python test-script.py
