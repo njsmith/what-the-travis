@@ -1,0 +1,8 @@
+language: python
+python:
+  - 2.7
+before_install:
+  - pip install python-scipy
+  - pip freeze # show what's installed
+script:
+  - python test-script.py
