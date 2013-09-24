@@ -2,7 +2,7 @@ language: python
 python:
   - 2.7
 before_install:
-  - sudo apt-get -qq install build-dep python-scipy
+  - sudo apt-get -qq build-dep python-scipy
   - pip install scipy
   - pip freeze # show what's installed
 script:
