@@ -1,9 +1,11 @@
 import numpy as np
 import scipy.sparse
 
-arr = np.zeros((2, 2))
-csc = scipy.sparse.csc_matrix([[10, 20], [20, 40]])
+a = np.zeros((2, 2))
+b = scipy.sparse.csc_matrix([[10.0, 45.0], [45.0, 285.0]])
+print repr(a)
+print repr(b)
 # okay?
-arr + csc
+a + b
 # error?
-arr += csc
+a + b

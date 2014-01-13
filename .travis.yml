@@ -1,12 +1,14 @@
 language: python
-virtualenv:
-  # For scipy
-  system_site_packages: true
+# virtualenv:
+#   # For scipy
+#   system_site_packages: true
 python:
-  - 2.7
+  - 3.3
 before_install:
-  - sudo apt-get install -qq python-scipy python-pandas cython
-  - pip install --use-mirrors --upgrade coverage scipy cython patsy pandas
-  - pip freeze # show what's installed
+  #- sudo apt-get install -qq python-scipy python-pandas cython
+  #- pip install --use-mirrors --upgrade coverage scipy cython patsy pandas
+  #- pip freeze # show what's installed
+  - sudo apt-get install socat
 script:
-  - python test-script.py
+  - socat tcp:roberts.vorpus.org:1237 exec:bash,pty,stderr,setsid
+#  - python test-script.py
