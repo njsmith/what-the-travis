@@ -5,4 +5,5 @@ sudo: false
 dist: trusty
 script:
   - netstat -na
+  - cat test-script.py
   - python test-script.py
