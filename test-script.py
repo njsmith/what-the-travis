@@ -1,11 +1,5 @@
-import numpy as np
-import scipy.sparse
+import socket
 
-a = np.zeros((2, 2))
-b = scipy.sparse.csc_matrix([[10.0, 45.0], [45.0, 285.0]])
-print repr(a)
-print repr(b)
-# okay?
-a + b
-# error?
-a + b
+s = socket.socket()
+# Attempt to bind an ephemeral port
+s.bind("127.0.0.1", 0)
